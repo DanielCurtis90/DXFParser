@@ -1,0 +1,298 @@
+Layer name: 0 
+Entity Type: MTEXT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Entity Type: INSERT 
+Attributes:  None 
+Layer name: Defpoints 
+Entity Type: LWPOLYLINE 
+Attributes:  ['Elevation: 0.0, ', 'Point Information: ', 'Point: (-1784.497111193555, 10968.32543180904, 0, 0, 0), ', 'Point: (898.7449077077217, 10968.32543180904, 0, 0, 0), ', 'Point: (898.7449077077217, 8996.349519456666, 0, 0, 0), ', 'Point: (-1784.497111193555, 8996.349519456666, 0, 0, 0), ', 'Is shape closed?: True '] 
+Layer name: 20171023 KING ST - SIMPLIFIED FLOOR PLAN & SEATING$0$Nu-wa 
+Layer name: 20171023 KING ST - SIMPLIFIED FLOOR PLAN & SEATING$0$C-nts 
+Layer name: 20171023 KING ST - SIMPLIFIED FLOOR PLAN & SEATING$0$Notes 
+Layer name: 20171023 KING ST - SIMPLIFIED FLOOR PLAN & SEATING$0$Nu-wahatch 
+Layer name: 20171023 KING ST - SIMPLIFIED FLOOR PLAN & SEATING$0$Rc-nuwaha 
+Layer name: 20171023 KING ST - SIMPLIFIED FLOOR PLAN & SEATING$0$Rc-lights 
+Layer name: 20171023 KING ST - SIMPLIFIED FLOOR PLAN & SEATING$0$EXIST-EARLS WALL 
+Layer name: 20171023 KING ST - SIMPLIFIED FLOOR PLAN & SEATING$0$EXIST-EARLS WALL HATCH 
+Layer name: 20171023 KING ST - SIMPLIFIED FLOOR PLAN & SEATING$0$EXIST-EARLS GLAZING 
+Layer name: 20171023 KING ST - SIMPLIFIED FLOOR PLAN & SEATING$0$EXIST-EARLS PATIO 
+Layer name: 20171023 KING ST - SIMPLIFIED FLOOR PLAN & SEATING$0$EXIST-EARLS MILLWORK 
+Layer name: FLOOR PLAN 
+Entity Type: INSERT 
+Attributes:  None 
