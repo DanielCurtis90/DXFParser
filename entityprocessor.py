@@ -2,7 +2,8 @@ import ezdxf
 
 def entity_processor(entity):
 	if entity.dxftype() == 'LWPOLYLINE':
-		return lwpolyline_extractor(entity)
+		#return lwpolyline_extractor(entity)
+		return lwpolyline_points(entity)
 	elif entity.dxftype() == 'INSERT':
 		return insert_extractor(entity)
 	elif entity.dxftype() == 'LINE':
@@ -23,20 +24,38 @@ def lwpolyline_extractor(entity):
 	attr_list.append(f"Is shape closed?: {entity.closed} ")
 	return attr_list
 
+def lwpolyline_points(entity):
+	coord_list = []
+	for poly_point in entity.get_points():
+		part = []
+		for coord in poly_point:
+			#add 5 points of precision
+			part.append(coord)
+		coord_list.append(part)
+	return coord_list
+
 def insert_extractor(entity):
+	#assumes the passed in entity is an INSERT entity
+	#not retrieving the text attribute, using that as key prior to calling this
+	#additionally not pulling the assigned block name as we need to it key into the block dictionary
 	insertattr_list = []
+	
+	insertattr_list.append(entity.dxf.insert)
+	insertattr_list.append(entity.dxf.rotation)
+	insertattr_list.append(entity.dxf.xscale)
+	insertattr_list.append(entity.dxf.yscale)
+	insertattr_list.append(entity.dxf.zscale)
+
+
+	''' THIS MAY BE NEEDED LATER
 	insertattr_list.append(f"Block Name: {entity.dxf.name}, ")
 	insertattr_list.append(f"Line Type: {entity.dxf.linetype}, ")
 	insertattr_list.append(f"Color: {entity.dxf.color}, ")
-	insertattr_list.append(f"Scaling Factor (X): {entity.dxf.xscale}, ")
-	insertattr_list.append(f"Scaling Factor (Y): {entity.dxf.yscale}, ")
-	insertattr_list.append(f"Scaling Factor (Z): {entity.dxf.zscale}, ")
-	insertattr_list.append(f"Rotation: {entity.dxf.rotation}, ")
 	insertattr_list.append(f"Repeated Row Insertion Count: {entity.dxf.row_count}, ")
 	insertattr_list.append(f"Repeated Row Insertion Spacing: {entity.dxf.row_spacing}, ")
 	insertattr_list.append(f"Repeated Column Insertion Count: {entity.dxf.column_count}, ")
 	insertattr_list.append(f"Repeated Column Insertion Spacing: {entity.dxf.column_spacing}, ")
-	insertattr_list.append(f"Insertion Point: {entity.dxf.insert}")
+	'''
 	return insertattr_list
 
 def line_extractor(entity):
