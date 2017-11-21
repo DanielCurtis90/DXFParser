@@ -1,5 +1,6 @@
 import ezdxf
 from entityprocessor import *
+from drawer import *
 
 
 #parsed_dxf is a Drawing object in ezdxf
@@ -24,16 +25,17 @@ with open("output.txt", "w") as outputfile:
         for block_entity in block:
             if block_entity.dxftype() == "LWPOLYLINE":
                 #append each set (list) of lwpolyline coordinates to a master list
-                lwpolycoord_list.append(lwpolyline_points(block_entity))
+                #this will generally appear to be two nested lists in the case of only one lwpolyline existing
+                lwpolycoord_list.append(lwcoord_shift(lwpolyline_points(block_entity)))
             if block_entity.dxftype() == "ATTDEF":
                 tag = block_entity.dxf.tag
                 prompt = block_entity.dxf.prompt
                 contains_attdef = True
 
         if contains_attdef:
-            block_dict[new_block_key] = [tag, prompt, lwpolycoord_list]
+            block_dict[new_block_key] = tag, prompt, lwpolycoord_list
     for key, value in block_dict.items():
-        outputfile.write(f"Key Value Pair: {key}: {value}, \n")
+        outputfile.write(f"Block Key Value Pair: {key}: {value}, \n")
 
 with open("output.txt", "a") as outputfile:
     insert_dict = {}
@@ -46,14 +48,9 @@ with open("output.txt", "a") as outputfile:
                 new_insert_key = attrib.dxf.text
             insert_list.append(entity.dxf.name)
             insert_list.append(insert_extractor(entity))
-            insert_dict[new_insert_key] = [insert_list]
+            insert_dict[new_insert_key] = insert_list
     
     for key, value in insert_dict.items():
         outputfile.write(f"Insert Key Value Pair: {key}: {value}, \n")
-        inner_list = value[0]
-        if key != None:
-            full_dict[key] = [value, block_dict[inner_list[0]]]
 
-    outputfile.write("\n")
-    for key, value in full_dict.items():
-        outputfile.write(f"Combined information: {key}: {value}, \n")
+write_eps(block_dict)

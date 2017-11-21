@@ -27,11 +27,8 @@ def lwpolyline_extractor(entity):
 def lwpolyline_points(entity):
 	coord_list = []
 	for poly_point in entity.get_points():
-		part = []
 		for coord in poly_point:
-			#add 5 points of precision
-			part.append(coord)
-		coord_list.append(part)
+			coord_list.append(coord)
 	return coord_list
 
 def insert_extractor(entity):
@@ -80,5 +77,28 @@ def mtext_extractor(entity):
 	attr_list.append(f"Line Spacing Factor: {entity.dxf.line_spacing_factor}, ")
 	return attr_list
 
+def lwcoord_shift(coord_list):
+	#Grab all x and y coordinates and put them into their own lists
+	#Assumes input list is an integer!
+	x_coords = coord_list[0::5]
+	y_coords = coord_list[1::5]
+	
+	#For each entry in these x or y coordinate lists, increase them by the absolute value of the lowest negative number
+	#This zeroes the coordinate system. Then round them to 3 decimal places. 
+	#Only do this if the lowest number in the x or y coordinate list is a negative!
+	shiftx_coords = [round(x + abs(min(x_coords)), 3) if min(x_coords) < 0 else round(x, 3) for x in x_coords]
+	shifty_coords = [round(y + abs(min(y_coords)), 3) if min(y_coords) < 0 else round(y, 3) for y in y_coords]
+	#Put the lists back together and keep the other info in the coord_list we acted upon
+	stiched_list = coord_list
+	stiched_list[0::5] = shiftx_coords
+	stiched_list[1::5] = shifty_coords
 
+	return stiched_list
+
+
+
+
+
+
+	
 
