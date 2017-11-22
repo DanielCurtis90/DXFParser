@@ -13,23 +13,34 @@ def entity_processor(entity):
 	else:
 		return "No Extractor defined for this Entity type"
 
-def lwpolyline_extractor(entity):
-	attr_list = []
-	attr_list.append(f"Elevation: {entity.dxf.elevation}, ")
-	attr_list.append(f"Constant Line Width: {entity.dxf.const_width}, ")
-	attr_list.append(f"Number of Vertices: {entity.dxf.count}, ")
-	attr_list.append(f"Point Information: ")
-	for poly_point in entity.get_points():
-		attr_list.append(f"Point: {poly_point}, ")
-	attr_list.append(f"Is shape closed?: {entity.closed} ")
-	return attr_list
-
 def lwpolyline_points(entity):
 	coord_list = []
 	for poly_point in entity.get_points():
 		for coord in poly_point:
 			coord_list.append(coord)
 	return coord_list
+
+def line_extractor(entity):
+	attr_list = []
+	attr_list.append(f"Start Point: {entity.dxf.start}, ")
+	attr_list.append(f"End Point: {entity.dxf.end}")
+	return attr_list
+
+def mtext_extractor(entity):
+	attr_list = []
+	attr_list.append(f"Text: {entity.get_text()}, ")
+	attr_list.append(f"Insertion Point: {entity.dxf.insert}, ")
+	attr_list.append(f"Character Height: {entity.dxf.char_height}, ")
+	attr_list.append(f"Width: {entity.dxf.width}, ")
+	attr_list.append(f"Attachment Point Flag: {entity.dxf.attachment_point}, ")
+	attr_list.append(f"Text Flow Direction Flag: {entity.dxf.flow_direction}, ")
+	attr_list.append(f"Style: {entity.dxf.style}, ")
+	if hasattr(entity, 'text_direction'):
+		attr_list.append(f"Text Direction (Overrides Rotation!): {entity.dxf.text_direction}, ")
+	attr_list.append(f"Rotation: {entity.dxf.rotation}, ")
+	attr_list.append(f"Line Spacing Style Flag: {entity.dxf.line_spacing_style}, ")
+	attr_list.append(f"Line Spacing Factor: {entity.dxf.line_spacing_factor}, ")
+	return attr_list
 
 def insert_extractor(entity):
 	#assumes the passed in entity is an INSERT entity
@@ -55,28 +66,6 @@ def insert_extractor(entity):
 	'''
 	return insertattr_list
 
-def line_extractor(entity):
-	attr_list = []
-	attr_list.append(f"Start Point: {entity.dxf.start}, ")
-	attr_list.append(f"End Point: {entity.dxf.end}")
-	return attr_list
-
-def mtext_extractor(entity):
-	attr_list = []
-	attr_list.append(f"Text: {entity.get_text()}, ")
-	attr_list.append(f"Insertion Point: {entity.dxf.insert}, ")
-	attr_list.append(f"Character Height: {entity.dxf.char_height}, ")
-	attr_list.append(f"Width: {entity.dxf.width}, ")
-	attr_list.append(f"Attachment Point Flag: {entity.dxf.attachment_point}, ")
-	attr_list.append(f"Text Flow Direction Flag: {entity.dxf.flow_direction}, ")
-	attr_list.append(f"Style: {entity.dxf.style}, ")
-	if hasattr(entity, 'text_direction'):
-		attr_list.append(f"Text Direction (Overrides Rotation!): {entity.dxf.text_direction}, ")
-	attr_list.append(f"Rotation: {entity.dxf.rotation}, ")
-	attr_list.append(f"Line Spacing Style Flag: {entity.dxf.line_spacing_style}, ")
-	attr_list.append(f"Line Spacing Factor: {entity.dxf.line_spacing_factor}, ")
-	return attr_list
-
 def lwcoord_shift(coord_list):
 	#Grab all x and y coordinates and put them into their own lists
 	#Assumes input list is an integer!
@@ -95,6 +84,31 @@ def lwcoord_shift(coord_list):
 
 	return stiched_list
 
+def insertcoord_shift(insert_dict):
+	x_coords = []
+	y_coords = []
+	shifted_dict = insert_dict
+	counter = 0
+	for value in insert_dict.values():
+		#dig into the first and second entries of the embedded coordinate list to get the x and y coordinates
+		x_coords.append(value[1][0][0])
+		y_coords.append(value[1][0][1])
+	#For each entry in these x or y coordinate lists, increase them by the absolute value of the lowest negative number
+	#This zeroes the coordinate system. Then round them to 3 decimal places. 
+	#Only do this if the lowest number in the x or y coordinate list is a negative!
+	shiftx_coords = [round(x + abs(min(x_coords)), 3) if min(x_coords) < 0 else round(x, 3) for x in x_coords]
+	shifty_coords = [round(y + abs(min(y_coords)), 3) if min(y_coords) < 0 else round(y, 3) for y in y_coords]
+
+	#Update the shifted coordinates
+	for value in shifted_dict.values():
+		#convert the coordinate containing tuple to a list so we can write to it
+		value[1][0] = list(value[1][0])
+		#update the rounded and shifted coordinates
+		value[1][0][0] = shiftx_coords[counter]
+		value[1][0][1] = shifty_coords[counter]
+		counter += 1
+
+	return shifted_dict
 
 
 
