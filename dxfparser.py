@@ -33,25 +33,23 @@ with open("output.txt", "w") as outputfile:
     for key, value in block_dict.items():
         outputfile.write(f"Block Key Value Pair: {key}: {value}, \n")
 
+#Assign INSERT entities to a dictionary and initialize their objects
 with open("output.txt", "a") as outputfile:
     insert_dict = {}
-    full_dict = {}
     for entity in modelspace:
-        insert_list = []
         if entity.dxftype() == "INSERT":
-            new_insert_key = None
             for attrib in entity.attribs():
-                new_insert_key = attrib.dxf.text
-            if new_insert_key != None:
-                insert_list.append(entity.dxf.name)
-                insert_list.append(insert_extractor(entity))
-                insert_dict[new_insert_key] = insert_list
-                
+                INSERT_ID = attrib.dxf.text
+                insert_dict[INSERT_ID] = INSERT(entity)
+    
     shifted_dict = (insertcoord_shift(insert_dict))
+    
+
+'''
     for key, value in insert_dict.items():
         outputfile.write(f"Insert Key Value Pair: {key}: {value}, \n")
     for key, value in shifted_dict.items():
         outputfile.write(f"Shifted Insert Key Value Pair: {key}: {value}, \n")
-
+'''
 
 draw_eps(shifted_dict, block_dict)
