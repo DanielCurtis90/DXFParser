@@ -16,20 +16,17 @@ def shifted_bounds(shifted_dict):
 
 def blocks_to_eps(block_dict, INSERT):
 	block_string = []
-	coord_list = block_dict[INSERT.name][2]
-	#If there are no coordinates, do not write anything
-	if coord_list != []:
-		#Dig one deeper to find the correct list (it's double nested)
-		coord_list = coord_list[0]
+	Refd_Block = block_dict[INSERT.name]
+	#Check if there are LWPOLYLINES to draw
+	if hasattr(Refd_Block, 'lwpolylines'):
 		#Write the start and move to the first point
-		block_string.append(f"{coord_list[0] + INSERT.xpoint} {coord_list[1] + INSERT.ypoint} moveto\n")
+		first_x = Refd_Block.lwpolylines[0].vertices[0].xpoint
+		first_y = Refd_Block.lwpolylines[0].vertices[0].ypoint
+		block_string.append(f"{first_x + INSERT.xpoint} {first_y + INSERT.ypoint} moveto\n")
 		#iterate over remaining vertices (based on where the x coordinate for the second vertex is stored)
-		cooc = 5
-		for coord in coord_list[5::5]:
-			block_string.append(f"{coord_list[cooc] + INSERT.xpoint} {coord_list[cooc + 1] + INSERT.ypoint} lineto\n")
-			cooc += 5
+		for vertex in Refd_Block.lwpolylines[0].vertices[1:]:
+			block_string.append(f"{vertex.xpoint + INSERT.xpoint} {vertex.ypoint + INSERT.ypoint} lineto\n")
 		block_string.append(f"closepath\n({INSERT.ID}) show\n2 setlinewidth\n0.5 setgray\nstroke\n")
-
 	return block_string
 
 def draw_eps(shifted_dict, block_dict):
